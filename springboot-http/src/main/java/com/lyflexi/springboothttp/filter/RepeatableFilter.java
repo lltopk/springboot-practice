@@ -19,12 +19,12 @@ public class RepeatableFilter implements Filter {
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
             throws IOException, ServletException {
 
-        ServletRequest wrappedRequest = delegatorRequest(request, response);
+        ServletRequest wrappedRequest = delegatedRequest(request, response);
 
         chain.doFilter(wrappedRequest, response);
     }
 
-    private ServletRequest delegatorRequest(ServletRequest request, ServletResponse response) throws IOException {
+    private ServletRequest delegatedRequest(ServletRequest request, ServletResponse response) throws IOException {
 
         if (request instanceof HttpServletRequest httpRequest
                 && StringUtils.hasText(httpRequest.getContentType())

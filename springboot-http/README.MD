@@ -9,3 +9,7 @@ getInputStream() / getReader() 本质上操作的是同一条流
 2. 依据HttpServletRequestWrapper构造Filter(将HttpServletRequestWrapper放入请求链)
 3. 注册这个Filter, 并将其提升为最高优先级的过滤器(@Configuration)
 4. 这样后续用户从UserInterceptor拦截器中拿到的request就是我们定义好的RepeatedlyRequestWrapper了
+
+对于可以用创建的匿名内部类实例或者函数式接口, 都属于功能类, 如ServletInputStream
+
+而且我们的RepeatedlyRequestWrapper具有成员变量byte[] body, 属于组件类
