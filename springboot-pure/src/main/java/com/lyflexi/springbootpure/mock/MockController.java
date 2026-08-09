@@ -21,7 +21,8 @@ public class MockController {
      * 测试git-curl请求中，post请求体字段，带中文值
      */
     @PostMapping(value = "/git-curl-post")
-    public void gitChinesePost (@RequestBody MockData data) {
+    public Object gitChinesePost (@RequestBody MockData data) {
         log.info(data.toString());
+        return data;
     }
 }

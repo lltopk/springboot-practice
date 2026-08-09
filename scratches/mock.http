@@ -1,5 +1,16 @@
 ### 测试git-curl请求中，post请求体字段，带中文值
-POST http://127.0.0.1/mock/git-curl-post
+POST http://127.0.0.1:8080/mock/git-curl-post
+Accept: application/json
+Content-Type: application/json
+
+{
+  "name": "name",
+  "age": 0,
+  "chinese": []
+}
+
+### 测试git-curl请求中，post请求体字段，带中文值
+POST http://127.0.0.1:8080/mock/git-curl-post
 Accept: application/json
 Content-Type: application/json
 
