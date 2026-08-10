@@ -22,6 +22,7 @@ public class MockController {
      */
     @PostMapping(value = "/git-curl-post")
     public Object gitChinesePost (@RequestBody MockData data) {
+        data.setName("new Name");
         log.info(data.toString());
         return data;
     }
